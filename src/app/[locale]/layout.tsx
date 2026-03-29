@@ -8,6 +8,7 @@ import { Providers } from "@/components/Providers";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CursorGlow } from "@/components/ui/CursorGlow";
+import { Analytics } from "@vercel/analytics/react";
 import "@/app/globals.css";
 
 const inter = Inter({
@@ -116,6 +117,7 @@ export default async function LocaleLayout({
               <main className="flex-1 overflow-x-hidden">{children}</main>
               <Footer />
             </div>
+            <Analytics />
           </NextIntlClientProvider>
         </Providers>
       </body>

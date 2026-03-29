@@ -100,9 +100,6 @@ export function OfferSection() {
                     <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                   </span>
                 </a>
-                <p className="text-center text-xs text-muted-foreground mt-4 uppercase tracking-widest">
-                  Limited slots available per month
-                </p>
               </div>
             </div>
             

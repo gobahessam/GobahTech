@@ -80,12 +80,16 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <LanguageSwitcher />
             <ThemeToggle />
-            <Link
-              href="/contact"
-              className="px-6 py-2 text-sm font-bold tracking-wide rounded-full bg-foreground text-background hover:opacity-90 transition-opacity"
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-6 py-2 text-sm font-bold tracking-wide rounded-full bg-foreground text-background hover:opacity-90 transition-opacity cursor-pointer"
             >
               {t("getInTouch")}
-            </Link>
+            </a>
           </div>
 
           <div className="md:hidden flex items-center gap-3 relative z-[60]">
@@ -174,13 +178,19 @@ export function Navbar() {
                   </div>
                 </div>
 
-                <Link
-                  href="/contact"
-                  onClick={toggleMobile}
-                  className="w-full py-4 text-center text-lg font-bold rounded-xl bg-foreground text-background hover:opacity-90 mt-2 shadow-lg"
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleMobile();
+                    setTimeout(() => {
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                    }, 300);
+                  }}
+                  className="w-full py-4 text-center text-lg font-bold rounded-xl bg-foreground text-background hover:opacity-90 mt-2 shadow-lg cursor-pointer"
                 >
                   {t("getInTouch")}
-                </Link>
+                </a>
               </motion.div>
             </motion.div>
           </motion.div>

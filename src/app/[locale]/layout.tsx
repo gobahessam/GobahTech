@@ -38,6 +38,10 @@ export async function generateMetadata({
     title: messages.metadata.title,
     description: messages.metadata.description,
     metadataBase: new URL("https://gobahtech.com"),
+    icons: {
+      icon: "/me.jpg",
+      apple: "/me.jpg",
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -51,6 +55,7 @@ export async function generateMetadata({
       description: messages.metadata.description,
       siteName: "GobahTech",
       type: "website",
+      images: ["/me.jpg"],
     },
   };
 }

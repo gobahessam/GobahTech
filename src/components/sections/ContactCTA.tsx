@@ -83,7 +83,7 @@ const COUNTRIES = [
 function buildWhatsAppMsg(agentName: string): string {
   return encodeURIComponent(
     `السلام عليكم ${agentName}،\n` +
-    `تواصلت معك من موقع https://gobah-tech.vercel.app\n` +
+    `تواصلت معك من موقع https://gobah-tech.ru\n` +
     `أود الاستفسار عن خدماتكم ومعرفة تفاصيل التكلفة والمدة الزمنية لمشروعي.\n` +
     `شكراً لكم.`
   );

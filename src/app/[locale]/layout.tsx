@@ -47,7 +47,7 @@ export async function generateMetadata({
   return {
     title: messages.metadata.title,
     description: messages.metadata.description,
-    metadataBase: new URL("https://gobahtech.com"),
+    metadataBase: new URL("https://gobah-tech.vercel.app"),
     icons: {
       icon: "/me.jpg",
       apple: "/me.jpg",
@@ -65,7 +65,21 @@ export async function generateMetadata({
       description: messages.metadata.description,
       siteName: "GobahTech",
       type: "website",
-      images: ["/me.jpg"],
+      url: `https://gobah-tech.vercel.app/${locale}`,
+      images: [
+        {
+          url: "https://gobah-tech.vercel.app/me.jpg",
+          width: 800,
+          height: 800,
+          alt: "GobahTech - Essam Gobah",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: messages.metadata.title,
+      description: messages.metadata.description,
+      images: ["https://gobah-tech.vercel.app/me.jpg"],
     },
   };
 }

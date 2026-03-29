@@ -88,7 +88,7 @@ export default async function LocaleLayout({
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} className="scroll-smooth" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang={locale} dir={dir} className="scroll-smooth overflow-x-hidden" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
         className={`${inter.variable} ${cairo.variable} ${
           locale === "ar" ? "font-cairo" : "font-inter"
@@ -97,9 +97,9 @@ export default async function LocaleLayout({
         <Providers>
           <NextIntlClientProvider messages={messages}>
             <CursorGlow />
-            <div className="flex min-h-screen flex-col">
+            <div className="flex min-h-screen flex-col overflow-x-hidden">
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main className="flex-1 overflow-x-hidden">{children}</main>
               <Footer />
             </div>
           </NextIntlClientProvider>

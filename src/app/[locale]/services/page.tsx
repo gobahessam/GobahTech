@@ -1,10 +1,10 @@
 import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import { Code2, Palette, ShoppingCart, Smartphone, Search, MessageSquare, CheckCircle2, ArrowRight, Cpu } from "lucide-react";
+import { type LucideIcon, Code2, Palette, ShoppingCart, Smartphone, Search, MessageSquare, CheckCircle2, ArrowRight, Cpu } from "lucide-react";
 
 const serviceKeys = ["webDev", "uiux", "ecommerce", "mobile", "seo", "ai"] as const;
 
-const serviceIcons: Record<string, React.ElementType> = {
+const serviceIcons: Record<string, LucideIcon> = {
   webDev: Code2,
   uiux: Palette,
   ecommerce: ShoppingCart,

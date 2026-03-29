@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "title": "GobahTech | Essam Gobah - Tech Engineering",
+    "description": "Transforming your physical shop into digital success. Travel, Study, and Info platforms."
+  },
+  "about": {
+    "badge": "The Mastermind",
+    "title": "My Journey from",
+    "titleHighlight": "Basics to Complex Systems.",
+    "bento1_title": "Essam Gobah",
+    "bento1_desc": "From studying Computer Science in Yemen to mastering network architecture and complex software engineering in Russia. Currently based in Moscow, I build market-leading platforms, turning complex ideas into invincible digital products.",
+    "bento2_title": "12+ Years",
+    "bento2_desc": "Of hands-on experience building, scaling, and architecting web infrastructures since 2014.",
+    "bento3_title": "Global Reach",
+    "bento3_desc": "Launched and managed successful projects across continents, ranging from tourism platforms to high-scale e-commerce.",
+    "bento4_title": "Absolute Efficiency",
+    "bento4_desc": "It's not just about building a system; it's about building it with zero resource waste and peak sustainable performance.",
+    "bento5_title": "Ready for the Challenge",
+    "bento5_desc": "Got an exceptional idea? Let's turn it into a reality that dominates search engines and the market."
+  },
+  "nav": {
+    "home": "Start",
+    "about": "My Story",
+    "services": "Capabilities",
+    "work": "Work",
+    "contact": "Contact",
+    "getInTouch": "Inquire Now"
+  },
+  "heroChat": {
+    "sender": "Essam Gobah",
+    "msg1": "Hello! How are you today? 👋",
+    "msg2": "Shall we start building your next project?",
+    "msg3": "A Tourism platform ✈️? An Online Store 🛒? Or an Official Website 🏢?",
+    "msg4": "Whatever your idea is, I will build it. Let's get to know each other! 👇"
+  },
+  "heroStory": {
+    "cta1": "Let's Start 🚀",
+    "cta2": "Who am I? ↓"
+  },
+  "heroV2": {
+    "badge": "Available for new projects",
+    "line1": "Engineering the",
+    "line2": "digital future.",
+    "sub": "I'm Essam Gobah — a developer and network engineer with 12+ years of experience. I build platforms that grow businesses, from tourism and e-commerce to enterprise systems.",
+    "cta1": "Start a Project",
+    "cta2": "See My Work",
+    "w1": "Tourism Platforms",
+    "w2": "E-Commerce Stores",
+    "w3": "Mobile Applications",
+    "w4": "Corporate Systems"
+  },
+  "hero": {
+    "badge": "Digital Interfaces",
+    "title1": "Transforming Your Store",
+    "titleHighlight": "Digitally",
+    "title2": "To Multiply Profits.",
+    "description": "Travel platforms, Study academies, Info portals. We build everything easily.",
+    "cta1": "Explore",
+    "cta2": "Go Digital",
+    "tags": {
+      "travel": "Travel Sites",
+      "study": "Study Platforms",
+      "info": "Info Portals",
+      "store": "Shop Transformation"
+    }
+  },
+  "steps": {
+    "badge": "The Magical Journey",
+    "title": "Steps to the",
+    "titleHighlight": "Top",
+    "description": "A seamless journey from a brilliant idea to a market-leading project.",
+    "list": {
+      "1": {
+        "title": "Idea Essence (Strategy)",
+        "description": "We sit together. I summarize your idea based on my experience since 2014."
+      },
+      "2": {
+        "title": "Creation (Website & App)",
+        "description": "I design and code jaw-dropping interfaces with optimal resources."
+      },
+      "3": {
+        "title": "Launch & Intelligence (Growth)",
+        "description": "We rank you first on Google, and integrate AI to make your business run autonomously."
+      }
+    }
+  },
+  "offer": {
+    "badge": "Safe Beginning",
+    "title": "Don't Pay Before You",
+    "titleHighlight": "Trust",
+    "description": "Because I am confident in my work, I offer a trial step so you can trust me.",
+    "card": {
+      "title": "Consultation & Free Prototype",
+      "price": "$0",
+      "features": [
+        "I listen to your request and summarize technically.",
+        "I map the project path without any jargon.",
+        "I give you the lowest price and easiest solution."
+      ],
+      "guarantee": "This session and prototype are entirely free.",
+      "cta": "Book Your Free Session"
+    }
+  },
+  "services": {
+    "badge": "How I Help",
+    "title": "Everything You Need, Engineered",
+    "titleHighlight": "Precisely",
+    "description": "I combine network engineering and programming for solid infrastructure.",
+    "items": {
+      "webDev": {
+        "title": "Super-Fast Websites",
+        "description": "I build sites designed to handle high traffic seamlessly.",
+        "features": ["Crazy Fast", "Secure Hosting", "Modern UI", "Error-Free"]
+      },
+      "mobile": {
+        "title": "Mobile Apps",
+        "description": "Android and iPhone apps with an unforgettable experience.",
+        "features": ["App Store", "Google Play", "High Performance", "Alerts"]
+      },
+      "ai": {
+        "title": "AI Systems",
+        "description": "Chatbots and analytics that save 80% of your effort.",
+        "features": ["Smart Chatbot", "Automation", "Sales Analytics", "Time Saver"]
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Complete, reliable selling systems using minimal resources.",
+        "features": ["Secure Pay", "Easy Admin", "Invoices", "Reports"]
+      },
+      "seo": {
+        "title": "Google Top Ranking",
+        "description": "We programmatically optimize your site for page one.",
+        "features": ["Code SEO", "Keywords", "Free Traffic", "Top Rank"]
+      },
+      "uiux": {
+        "title": "Eye-Catching Screens",
+        "description": "Delivering interfaces with breathtaking animations.",
+        "features": ["Modern Anim", "Full Identity", "Harmony", "Prestige"]
+      }
+    },
+    "learnMore": "Explore Service"
+  },
+
+  "faq": {
+    "badge": "Transparency First",
+    "title": "Frequently Asked",
+    "titleHighlight": "Questions",
+    "description": "Got questions? I answer them with complete engineering transparency.",
+    "items": {
+      "0": {
+        "question": "How much does a website or an app cost?",
+        "answer": "Cost depends entirely on the scope and features of your project. I don't use pre-priced templates; I engineer custom systems tailored to your budget without compromising quality."
+      },
+      "1": {
+        "question": "Why shouldn't I just use AI to build my site in seconds?",
+        "answer": "AI builds generic templates and automated \"spaghetti code\" that breaks under scale. I engineer robust, secure architectures with deep human UX/UI that actual businesses rely on."
+      },
+      "2": {
+        "question": "What is the timeline for a project?",
+        "answer": "Medium-sized projects typically take 2-4 weeks for the first version. I build everything from scratch, focusing on micro-animations, performance, and flawless delivery."
+      },
+      "3": {
+        "question": "Are there any hidden fees or hosting traps?",
+        "answer": "Transparency is my first priority. I will clearly explain the hosting costs (paid directly to service providers) based on your project scale and guide you to the most stable and cost-effective options. There are no mandatory monthly maintenance fees or hidden charges."
+      },
+      "4": {
+        "question": "How do you guarantee the quality of the work?",
+        "answer": "I don't hand over a project without rigorous performance testing. You don't pay the final installment until you are 100% satisfied with speed, design, and scalability."
+      }
+    }
+  },
+  "contact": {
+    "badge": "Your Digital Gateway",
+    "title": "Let's Engineer Your Idea",
+    "titleHighlight": "Together",
+    "description": "Whether you have a fully-fledged project or just an initial idea, reach out to discuss technical and business details professionally.",
+    "whatsappCta": "WhatsApp",
+    "callCta": "Direct Call",
+    "locations": {
+      "title": "Select Your Closest Region",
+      "ru": "Russia",
+      "ye": "Yemen",
+      "sa": "Saudi Arabia",
+      "tr": "Turkey",
+      "eg": "Egypt",
+      "us": "USA"
+    },
+    "info": {
+      "emailLabel": "Email",
+      "email": "hello@gobahtech.com",
+      "locationLabel": "Location",
+      "location": "Serving You Worldwide",
+      "availabilityLabel": "Experience",
+      "availability": "At Your Service Since 2014"
+    }
+  },
+  "footer": {
+    "description": "Making advanced technology accessible the easiest way.",
+    "quickLinks": "Links",
+    "connect": "Stay Connected",
+    "rights": "All rights reserved. Essam Gobah.",
+    "builtWith": "Coded with"
+  },
+  "common": {
+    "scrollDown": "Discover Story"
+  }
+}

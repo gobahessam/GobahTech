@@ -11,8 +11,9 @@ import { routing, type Locale } from "@/i18n/routing";
 
 const navItems = [
   { key: "home", href: "/" },
-  { key: "services", href: "/services" },
-  { key: "work", href: "/work" },
+  { key: "about", href: "/#about" },
+  { key: "services", href: "/#services" },
+  { key: "work", href: "/#work" },
 ] as const;
 
 export function Navbar() {
@@ -56,23 +57,22 @@ export function Navbar() {
             {navItems.map(({ key, href }) => {
               const isActive = pathname === href || (href !== "/" && pathname.startsWith(href));
               return (
-                <Link
+                <a
                   key={key}
                   href={href}
-                  className="relative group py-2"
+                  className={`text-sm tracking-widest rtl:tracking-normal uppercase rtl:font-semibold font-bold rtl:text-[15px] px-4 py-2 transition-colors relative z-10 ${
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <span className={`text-sm font-semibold tracking-wide transition-colors ${
-                    isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
-                  }`}>
-                    {t(key)}
-                  </span>
+                  {t(key)}
                   {isActive && (
-                    <motion.div 
-                      layoutId="nav_indicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-foreground rounded-full"
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute -inset-x-3 -inset-y-2 rounded-full bg-surface -z-10 shadow-sm border border-border/50"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
-                </Link>
+                </a>
               );
             })}
           </nav>
@@ -92,7 +92,8 @@ export function Navbar() {
             </a>
           </div>
 
-          <div className="md:hidden flex items-center gap-3 relative z-[60]">
+          <div className="md:hidden flex items-center gap-2 relative z-[60]">
+             <LanguageSwitcher />
              <ThemeToggle />
              <button
                onClick={toggleMobile}
@@ -135,15 +136,17 @@ export function Navbar() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 * i + 0.1, duration: 0.4 }}
                     >
-                      <Link
+                      <a
                         href={href}
                         onClick={toggleMobile}
-                        className={`text-4xl font-black tracking-tight block ${
-                          isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                        }`}
+                        className={`text-2xl font-black rtl:font-bold block w-full py-2 ${
+                          isActive 
+                            ? "text-brand translate-x-2" 
+                            : "text-foreground hover:text-brand hover:translate-x-2"
+                        } transition-all duration-300`}
                       >
                         {t(key)}
-                      </Link>
+                      </a>
                     </motion.div>
                   );
                 })}
@@ -155,28 +158,7 @@ export function Navbar() {
                 transition={{ delay: 0.4 }}
                 className="pt-8 flex flex-col gap-6"
               >
-                {/* Very smooth, large language selector explicitly requested by user */}
-                <div className="flex flex-col gap-3">
-                  <span className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Language</span>
-                  <div className="flex gap-2">
-                    {routing.locales.map((loc) => (
-                      <button
-                        key={loc}
-                        onClick={() => {
-                          router.replace(pathname, { locale: loc });
-                          toggleMobile();
-                        }}
-                        className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all ${
-                          pathname.startsWith(`/${loc}`) || (loc === 'en' && pathname === '/') 
-                            ? "bg-foreground text-background shadow-md" 
-                            : "bg-surface border border-border text-foreground hover:bg-muted"
-                        }`}
-                      >
-                        {loc.toUpperCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
+                {/* Contact CTA in Mobile Menu */}
 
                 <a
                   href="#contact"

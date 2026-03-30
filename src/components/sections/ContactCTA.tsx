@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Phone, Mail, MapPin, ArrowRight, Sparkles, Globe2, Send } from "lucide-react";
 import { useState } from "react";
@@ -80,7 +80,23 @@ const COUNTRIES = [
   },
 ];
 
-function buildWhatsAppMsg(agentName: string): string {
+function buildWhatsAppMsg(agentName: string, locale: string): string {
+  if (locale === "en") {
+    return encodeURIComponent(
+      `Hello ${agentName},\n` +
+      `I am contacting you from https://gobah-tech.ru\n` +
+      `I would like to inquire about your services, pricing, and project timeline.\n` +
+      `Thank you.`
+    );
+  }
+  if (locale === "ru") {
+    return encodeURIComponent(
+      `Здравствуйте, ${agentName},\n` +
+      `Я обращаюсь к вам с сайта https://gobah-tech.ru\n` +
+      `Я хотел бы узнать о ваших услугах, ценах и сроках выполнения моего проекта.\n` +
+      `Спасибо.`
+    );
+  }
   return encodeURIComponent(
     `السلام عليكم ${agentName}،\n` +
     `تواصلت معك من موقع https://gobah-tech.ru\n` +
@@ -91,6 +107,7 @@ function buildWhatsAppMsg(agentName: string): string {
 
 export function ContactCTA() {
   const t = useTranslations("contact");
+  const locale = useLocale();
   const [activeCountry, setActiveCountry] = useState(COUNTRIES[0]);
 
   return (
@@ -236,7 +253,7 @@ export function ContactCTA() {
                   
                   {/* WhatsApp Button (Primary) */}
                   <a
-                    href={`https://wa.me/${activeCountry.phoneRaw}?text=${buildWhatsAppMsg(activeCountry.agentName)}`}
+                    href={`https://wa.me/${activeCountry.phoneRaw}?text=${buildWhatsAppMsg(activeCountry.agentName, locale)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative flex-1 flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold text-lg transition-all duration-300 shadow-[0_8px_30px_rgba(37,211,102,0.35)] hover:shadow-[0_12px_40px_rgba(37,211,102,0.5)] hover:-translate-y-0.5"

@@ -1,139 +1,140 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { ExternalLink, Sparkles } from "lucide-react";
+import { Sparkles, ArrowUpRight } from "lucide-react";
+import React from "react";
 
 const projects = [
   {
     id: 1,
-    titleEn: "E-Commerce Platform",
-    titleAr: "منصة تجارة إلكترونية",
-    titleRu: "Платформа электронной коммерции",
-    category: "ecommerce",
-    tech: ["Next.js", "Stripe", "PostgreSQL"],
-    color: "from-violet-500/20 to-purple-500/20",
-    year: "2025",
+    titleEn: "Yemeni Community Portal",
+    titleAr: "بوابة الجالية اليمنية - موسكو",
+    titleRu: "Йеменская община — Москва",
+    descEn: "A comprehensive digital platform for managing community events, consular services, and seamless communication.",
+    descAr: "منصة رقمية متكاملة لإدارة فعاليات الجالية، حجز الخدمات القنصلية، وتعزيز التواصل المشترك.",
+    descRu: "Комплексная цифровая платформа для управления мероприятиями общины и консульскими услугами.",
+    tech: ["Next.js", "Prisma", "TailwindCSS"],
+    gradient: "from-blue-600/20 to-violet-500/20",
+    url: "https://yemenrussia.com",
   },
   {
     id: 2,
-    titleEn: "SaaS Dashboard",
-    titleAr: "لوحة تحكم SaaS",
-    titleRu: "SaaS Панель управления",
-    category: "web",
-    tech: ["React", "TypeScript", "Tailwind"],
-    color: "from-blue-500/20 to-cyan-500/20",
-    year: "2025",
+    titleEn: "High-Conversion E-Commerce",
+    titleAr: "منصة تجارة إلكترونية تُضاعف الأرباح",
+    titleRu: "E-Commerce с высокой конверсией",
+    descEn: "Engineered from a basic storefront into a smart sales engine that doubles profits, ensuring a secure and seamless user experience.",
+    descAr: "نقطة التحول من المبيعات التقليدية إلى الهيمنة الرقمية. تمت هندسة هذا المتجر ليتحول من واجهة عرض بسيطة إلى ماكينة مبيعات ذكية تُضاعف الأرباح وتجذب الزوار للتحول إلى عملاء ذوي ولاء.",
+    descRu: "Разработано из обычного магазина в умный механизм продаж, который удваивает прибыль.",
+    tech: ["Next.js", "Stripe", "PostgreSQL"],
+    gradient: "from-emerald-500/20 to-teal-500/20",
+    url: "#",
   },
   {
     id: 3,
-    titleEn: "Mobile Banking App",
-    titleAr: "تطبيق بنكي للموبايل",
-    titleRu: "Мобильное банковское приложение",
-    category: "mobile",
-    tech: ["React Native", "Node.js", "MongoDB"],
-    color: "from-emerald-500/20 to-teal-500/20",
-    year: "2024",
+    titleEn: "Tourism AI Portal",
+    titleAr: "بوابة سياحية بالذكاء الاصطناعي",
+    titleRu: "Туристический ИИ портал",
+    descEn: "AI-driven local tourism guide with dynamic booking and smart translation.",
+    descAr: "دليل سياحي يعتمد بالكامل على نماذج الذكاء الاصطناعي مع حجز ديناميكي وترجمة تلقائية للسياح.",
+    descRu: "ИИ гид по туризму с умным бронированием.",
+    tech: ["Next.js", "OpenAI", "Prisma"],
+    gradient: "from-orange-500/20 to-pink-500/20",
+    url: "#",
   },
   {
     id: 4,
-    titleEn: "Community Portal",
-    titleAr: "بوابة مجتمعية",
-    titleRu: "Общественный портал",
-    category: "web",
-    tech: ["Next.js", "Prisma", "Auth.js"],
-    color: "from-orange-500/20 to-amber-500/20",
-    year: "2024",
+    titleEn: "Graduation Project: HealthTech",
+    titleAr: "مشروع تخرج: نظام صحي ذكي",
+    titleRu: "Дипломный проект: HealthTech",
+    descEn: "End-to-end hospital management system ensuring A+ grade for students.",
+    descAr: "نظام إدارة مستشفيات متكامل يضمن حصول الطالب المعني على درجة الامتياز عبر كود نظيف وبنية هندسية واضحة.",
+    descRu: "Полная система управления больницей для диплома.",
+    tech: ["React Native", "Node.js", "MongoDB"],
+    gradient: "from-violet-500/20 to-rose-500/20",
+    url: "#",
   },
 ];
 
-export function WorkSection() {
-  const t = useTranslations("work");
+function FlatMinimalCard({ project, locale, index }: { project: any, locale: string, index: number }) {
+  const title = locale === "ar" ? project.titleAr : locale === "ru" ? project.titleRu : project.titleEn;
+  const desc = locale === "ar" ? project.descAr : locale === "ru" ? project.descRu : project.descEn;
+  const isRTL = locale === "ar";
 
   return (
-    <section id="work" className="py-24 sm:py-32 relative bg-surface/30">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          className="text-center max-w-2xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand/20 bg-brand/5 text-brand text-sm font-medium">
-            <Sparkles className="w-4 h-4" />
-            {t("badge")}
-          </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black text-foreground max-w-2xl mx-auto leading-snug mb-4 rtl:text-3xl rtl:sm:text-4xl rtl:lg:text-4xl rtl:font-extrabold rtl:leading-relaxed">
-            {t("title")} <span className="gradient-text">{t("titleHighlight")}</span>
-          </h2>
-          <p className="mt-4 text-lg font-medium text-foreground/60">{t("description")}</p>
-        </motion.div>
+    <motion.a
+      href={project.url}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+      className="group block relative w-full h-auto min-h-[460px] rounded-[2rem] bg-background border border-border/60 hover:border-brand/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] focus:outline-none focus:ring-2 focus:ring-brand overflow-hidden"
+    >
+      {/* Visual Placeholder Header (Clean, Flat, Apple-like) */}
+      <div className={`relative h-56 w-full bg-gradient-to-br ${project.gradient} border-b border-border/40 overflow-hidden flex items-end justify-center pt-8`}>
+        <div className="relative w-[80%] h-full bg-background/90 rounded-t-xl border border-b-0 border-border/80 shadow-[0_-5px_20px_-10px_rgba(0,0,0,0.2)] flex items-center justify-center transition-transform duration-500 group-hover:translate-y-2">
+           <Sparkles className="w-8 h-8 text-muted-foreground/30 transition-colors duration-500 group-hover:text-foreground/50" strokeWidth={1.5} />
+        </div>
+      </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.id}
-              className="group relative rounded-2xl border border-border bg-surface/50 overflow-hidden hover:border-brand/30 transition-all duration-500"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              {/* Project Color Banner */}
-              <div className={`h-48 bg-gradient-to-br ${project.color} relative`}>
-                <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl font-bold text-foreground/10">
-                    0{project.id}
-                  </span>
-                </div>
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-colors duration-500 flex items-center justify-center">
-                  <ExternalLink className="w-8 h-8 text-foreground opacity-0 group-hover:opacity-60 transition-all duration-300 scale-75 group-hover:scale-100" />
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-lg font-bold text-foreground text-start">
-                    {project.titleEn}
-                  </h3>
-                  <span className="text-xs text-muted-foreground">{project.year}</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 text-xs font-medium rounded-md border border-border bg-background/50 text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+      {/* Structured Content Area */}
+      <div className="flex flex-col p-8 lg:p-10">
+        <div className="flex items-start justify-between mb-4 gap-4">
+          <h3 className="text-xl md:text-2xl font-bold text-foreground leading-snug tracking-tight">
+            {title}
+          </h3>
+          <div className="w-10 h-10 shrink-0 rounded-full bg-surface border border-border text-foreground flex items-center justify-center transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:border-brand">
+            <ArrowUpRight className={`w-5 h-5 ${isRTL ? "-scale-x-100" : ""}`} />
+          </div>
+        </div>
+        
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-8">
+          {desc}
+        </p>
+        
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {project.tech.map((t: string) => (
+            <span key={t} className="px-3 py-1.5 bg-surface rounded-md text-xs font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
+              {t}
+            </span>
           ))}
         </div>
+      </div>
+    </motion.a>
+  );
+}
 
-        {/* View All */}
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl border border-border bg-surface hover:bg-surface-hover transition-all duration-300"
-          >
-            {t("viewAll")}
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </motion.div>
+export function WorkSection() {
+  const t = useTranslations("work");
+  const locale = useLocale();
+
+  return (
+    <section id="work" className="py-24 sm:py-32 relative bg-surface/20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Simple & Clear Section Header */}
+        <div className="max-w-2xl mb-16 md:mb-20 text-start">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface border border-border text-foreground font-semibold text-xs mb-6 tracking-wide uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand" />
+            {t("badge")}
+          </div>
+          
+          <h2 className="text-4xl sm:text-5xl lg:text-5xl font-black text-foreground rtl:font-bold leading-tight tracking-tight mb-6">
+            {t("title")}{" "}
+            <span className="text-muted-foreground">{t("titleHighlight")}</span>
+          </h2>
+          
+          <p className="text-lg text-muted-foreground rtl:leading-[1.8] font-medium leading-relaxed">
+            {t("description")}
+          </p>
+        </div>
+
+        {/* Minimalist Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+          {projects.map((project, i) => (
+            <FlatMinimalCard key={project.id} project={project} locale={locale} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -32,26 +32,30 @@ export function HeroSection() {
   // Clean, DRY Button components
   const CTAs = ({ mobile = false }: { mobile?: boolean }) => (
     <>
-      <Link 
-        href="/contact" 
-        className={`group relative inline-flex items-center justify-center gap-2 ${mobile ? "w-full" : ""} px-9 py-4 rounded-full bg-foreground text-background font-black text-sm hover:scale-[1.04] active:scale-[0.97] transition-all shadow-xl overflow-hidden`}
+      <a 
+        href="#contact" 
+        onClick={(e) => {
+          e.preventDefault();
+          document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className={`group relative inline-flex items-center justify-center gap-2 ${mobile ? "w-full" : ""} px-9 py-4 rounded-full bg-foreground text-background font-black text-sm hover:scale-[1.04] active:scale-[0.97] transition-all shadow-xl overflow-hidden cursor-pointer`}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <span className="relative z-10">{tStory("cta1")}</span>
         <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-      </Link>
+      </a>
       
-      <Link 
+      <a 
         href="#about" 
         onClick={(e) => {
           e.preventDefault();
           document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`inline-flex items-center justify-center gap-2 ${mobile ? "w-full" : ""} px-9 py-4 rounded-full border border-border/50 bg-surface/40 backdrop-blur-xl text-foreground font-bold text-sm hover:bg-surface/80 transition-all hover:scale-[1.02]`}
+        className={`inline-flex items-center justify-center gap-2 ${mobile ? "w-full" : ""} px-9 py-4 rounded-full border border-border/50 bg-surface/40 backdrop-blur-xl text-foreground font-bold text-sm hover:bg-surface/80 transition-all hover:scale-[1.02] cursor-pointer`}
       >
         <Terminal className="w-4 h-4 text-cyan-500 dark:text-cyan-400" />
         {tStory("cta2")}
-      </Link>
+      </a>
     </>
   );
 
@@ -78,14 +82,14 @@ export function HeroSection() {
           </div>
           
           {/* Headline - Stripped of messy gradients for maximum professional impact */}
-          <h1 className="text-[2.75rem] sm:text-5xl lg:text-7xl font-black text-foreground leading-[1.2] rtl:text-4xl rtl:sm:text-5xl rtl:lg:text-[3.5rem] rtl:font-extrabold rtl:leading-snug mb-6 drop-shadow-sm">
+          <h1 className="text-[2.75rem] sm:text-5xl lg:text-7xl font-black text-foreground leading-[1.2] rtl:text-4xl rtl:sm:text-5xl rtl:lg:text-6xl rtl:font-bold rtl:leading-[1.5] mb-6 drop-shadow-sm tracking-tight rtl:tracking-normal">
             {t("line1")} <br className="hidden lg:block" />
             <span className="bg-gradient-to-r from-cyan-600 to-violet-600 dark:from-cyan-400 dark:to-violet-500 bg-clip-text text-transparent">
               {t("line2")}
             </span>
           </h1>
 
-          <p className="hidden lg:block text-lg text-foreground/70 leading-relaxed font-medium max-w-md mb-10">
+          <p className="hidden lg:block text-lg text-foreground/70 leading-relaxed rtl:leading-[1.8] font-medium max-w-md mb-10">
             {t("sub")}
           </p>
 

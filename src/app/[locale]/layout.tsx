@@ -9,6 +9,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CursorGlow } from "@/components/ui/CursorGlow";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "@/app/globals.css";
 
 const inter = Inter({
@@ -104,6 +105,27 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} className="scroll-smooth overflow-x-hidden" suppressHydrationWarning data-scroll-behavior="smooth">
+      <head>
+        <Script
+          id="schema-json-ld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": locale === "ar" ? "عصام جوبح" : locale === "ru" ? "Гобах Есам" : "Essam Gobah",
+              "jobTitle": "Software Engineer",
+              "url": "https://gobah-tech.ru",
+              "image": "https://gobah-tech.ru/me.jpg",
+              "knowsLanguage": ["ar", "en", "ru"],
+              "sameAs": [
+                "https://github.com/gobahessam"
+              ]
+            })
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${cairo.variable} ${
           locale === "ar" ? "font-cairo" : "font-inter"

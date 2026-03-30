@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { StepsSection } from "@/components/sections/StepsSection";
 import { OfferSection } from "@/components/sections/OfferSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { WorkSection } from "@/components/sections/WorkSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -31,10 +32,13 @@ export default async function HomePage({
       {/* 3. Show them WHAT I do (Services) */}
       <ServicesSection />
       
-      {/* 4. Kill remaining objections (FAQ) */}
+      {/* 4. Display Portfolio / Work */}
+      <WorkSection />
+      
+      {/* 5. Kill remaining objections (FAQ) */}
       <FAQSection />
       
-      {/* 5. Final Push */}
+      {/* 6. Final Push */}
       <ContactCTA />
     </>
   );

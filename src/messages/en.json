@@ -16,7 +16,20 @@
     "bento4_title": "Absolute Efficiency",
     "bento4_desc": "It's not just about building a system; it's about building it with zero resource waste and peak sustainable performance.",
     "bento5_title": "Ready for the Challenge",
-    "bento5_desc": "Got an exceptional idea? Let's turn it into a reality that dominates search engines and the market."
+    "bento5_desc": "Got an exceptional idea? Let's turn it into a reality that dominates search engines and the market.",
+    "badges": {
+      "exp_label": "Experience",
+      "exp_value": "Since 2014 🚀",
+      "edu_label": "Studied in",
+      "edu_value": "Yemen & RU 🎓",
+      "loc_label": "Based in",
+      "loc_value": "Moscow 🌍",
+      "proj_label": "Projects",
+      "proj_value": "Global ✅",
+      "perf_label": "Performance",
+      "perf_value": "Absolute ⚡",
+      "location": "Moscow, Russia"
+    }
   },
   "nav": {
     "home": "Start",
@@ -127,6 +140,11 @@
         "description": "Complete, reliable selling systems using minimal resources.",
         "features": ["Secure Pay", "Easy Admin", "Invoices", "Reports"]
       },
+      "graduation": {
+        "title": "Graduation Projects",
+        "description": "Assisting university students by programming graduation projects with clean architecture and providing code guidance.",
+        "features": ["Code Review", "Clean Arch", "Full Guidance", "Top Grades"]
+      },
       "seo": {
         "title": "Google Top Ranking",
         "description": "We programmatically optimize your site for page one.",
@@ -139,6 +157,13 @@
       }
     },
     "learnMore": "Explore Service"
+  },
+
+  "work": {
+    "badge": "Proud Works",
+    "title": "Selected",
+    "titleHighlight": "Projects",
+    "description": "A glimpse into projects designed with passion and built with clean code."
   },
 
   "faq": {

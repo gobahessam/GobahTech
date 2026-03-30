@@ -162,18 +162,18 @@ export function AboutSection() {
                 <div className="text-lg font-black text-foreground">{t("bento1_title")}</div>
                 <div className="flex items-center justify-center gap-1.5 mt-1 text-xs text-foreground/50 font-semibold">
                   <MapPin className="w-3 h-3 text-cyan-500" />
-                  Moscow, Russia
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-1" />
-                </div>
+                {t("badges.location")}
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-1" />
               </div>
+            </div>
             </motion.div>
 
             {/* Orbiting badges */}
-            <FloatingBadge icon={Clock3}        label="خبرة منذ"  value="2014 🚀"       top="4%"    left="0%"   delay={0.4}  color="bg-cyan-500/20 text-cyan-500" />
-            <FloatingBadge icon={GraduationCap} label="درس في"    value="Yemen & RU 🎓" top="8%"    right="0%"  delay={0.55} color="bg-violet-500/20 text-violet-500" />
-            <FloatingBadge icon={Globe2}        label="يعمل من"   value="Moscow 🌍"      top="48%"   right="-2%" delay={0.7}  color="bg-blue-500/20 text-blue-500" />
-            <FloatingBadge icon={Rocket}        label="مشاريع"    value="عالمية ✅"      bottom="10%" left="2%"  delay={0.85} color="bg-orange-500/20 text-orange-500" />
-            <FloatingBadge icon={Zap}           label="أداء"      value="مطلق ⚡"        bottom="4%"  right="4%" delay={1.0}  color="bg-emerald-500/20 text-emerald-500" />
+            <FloatingBadge icon={Clock3}        label={t("badges.exp_label")}  value={t("badges.exp_value")}       top="4%"    left="0%"   delay={0.4}  color="bg-cyan-500/20 text-cyan-500" />
+            <FloatingBadge icon={GraduationCap} label={t("badges.edu_label")}  value={t("badges.edu_value")} top="8%"    right="0%"  delay={0.55} color="bg-violet-500/20 text-violet-500" />
+            <FloatingBadge icon={Globe2}        label={t("badges.loc_label")}  value={t("badges.loc_value")}      top="48%"   right="-2%" delay={0.7}  color="bg-blue-500/20 text-blue-500" />
+            <FloatingBadge icon={Rocket}        label={t("badges.proj_label")} value={t("badges.proj_value")}      bottom="10%" left="2%"  delay={0.85} color="bg-orange-500/20 text-orange-500" />
+            <FloatingBadge icon={Zap}           label={t("badges.perf_label")} value={t("badges.perf_value")}        bottom="4%"  right="4%" delay={1.0}  color="bg-emerald-500/20 text-emerald-500" />
           </div>
 
           {/* ── Mobile: simple profile ── */}
@@ -185,7 +185,7 @@ export function AboutSection() {
               <div className="font-black text-foreground text-lg">{t("bento1_title")}</div>
               <div className="flex items-center justify-center gap-1.5 text-xs text-foreground/50 mt-1">
                 <MapPin className="w-3 h-3 text-cyan-500" />
-                Moscow, Russia
+                {t("badges.location")}
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-1" />
               </div>
             </div>
